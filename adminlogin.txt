@@ -1,0 +1,11 @@
+Admin :
+Username = 'Tanbir'
+Email = 'pradhantanbir@gmail.com'
+password = '123'
+
+
+
+
+Student :
+Username : pradhantanbir
+password : 123
