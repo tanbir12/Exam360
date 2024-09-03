@@ -20,7 +20,8 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: "Gill Sans", sans-serif;;
+      font-family: "Gill Sans", sans-serif;
+      background-color: rgb(240, 240, 240);
     }
 
     header {
@@ -42,16 +43,17 @@
       color: #19B3D3;
     }
 
-
+    .logoimg{
+      margin-left : 30px;
+    }
 
     .logout_btn {
-      padding: 5px;
-      background: #ef5350;
+      padding: 5px 20px;
+      background: #ff0947;
       text-decoration: none;
       float: right;
       margin-top: -30px;
-      margin-right: 40px;
-      border-radius: 2px;
+      margin-right: 20px;
       font-size: 15px;
       font-weight: 600;
       color: #fff;
@@ -60,11 +62,12 @@
     }
 
     .logout_btn:hover {
-      background:#ca4745;
+      color: white;
+      box-shadow: 1px 5px 5px black;
     }
 
     .sidebar {
-      background: #2171b1;
+      background: #2483ff;
       margin-top: 5.8em;
       padding-top: 30px;
       position: fixed;
@@ -91,18 +94,22 @@
     .sidebar a {
       color: #fff;
       display: block;
-      width: 100%;
-      line-height: 60px;
+      width: 80%;
+      line-height: 50px;
       text-decoration: none;
-      padding-left: 40px;
+      text-align: center;
       box-sizing: border-box;
       transition: 0.5s;
+      margin: 20px auto;
+      border: 2px solid rgb(169, 199, 255);
+      border-radius: 30px;
 
     }
 
     .sidebar a:hover {
-      background:  #969696;
+      background:  #1070ff;
       color:white;
+      box-shadow: 1px 5px 5px white;
     }
 
     .sidebar i {
@@ -135,7 +142,8 @@
     #check:checked~.sidebar a {
       font-size: 20px;
       margin-left: 170px;
-      width: 80px;
+      padding-left: 20px;
+      width: 70px;
     }
 
     .content {
@@ -175,10 +183,10 @@
   <!--header area start-->
   <header class="shadow bg-light">
     <label for="check">
-      <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
+      <i style="left: 20px;margin-top: 20px;"class="fas fa-bars" id="sidebar_btn"></i>
     </label>
     <div class="left_area">
-      <h3>Online Exam</h3>
+      <img src="static/assets/img/logo/Logo.png" class="logoimg" alt="" srcset="">
     </div>
     <div class="right_area">
       <a href="/logout" class="logout_btn" style="border-radius:0px;"> Logout</a>

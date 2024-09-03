@@ -1,85 +1,109 @@
 <!DOCTYPE html>
 {% load widget_tweaks %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
-      body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #adc5df;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #d7d2cc, #adc5df);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #d7d2cc, #adc5df); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+<html>
 
-}
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #1f1c33, #5c5979, #323257);
+        }
 
-.box {
-    width: 500px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: #fff;
-    text-align: center;
-    transition: 0.25s;
-    margin-top: 100px
-}
+        .main {
+            width: 350px;
+            height: 500px;
+            background: red;
+            overflow: hidden;
+            background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+            border-radius: 10px;
+            box-shadow: 5px 20px 50px #000;
+        }
 
-.box input[type="text"],
-.box input[type="password"] {
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #838383;
-    padding: 10px 10px;
-    width: 250px;
-    outline: none;
-    color: #000;
-    transition: 0.25s
-}
+        #chk {
+            display: none;
+        }
 
-.box h1 {
-    color: #424242;
-    font-weight: 500
-}
+        .signup {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
 
-.box input[type="text"]:focus,
-.box input[type="password"]:focus {
-    width: 300px;
-    border-color: #c7d7e9;
-}
+        label {
+            color: #fff;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
 
+        input {
+            width: 60%;
+            height: 14px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 40px auto;
+            padding: 12px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
 
+        .button {
+            width: 40%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: #222129;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 80px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #404041;
+        }
 
     </style>
-  </head>
-  <body>
-    {% include "navbar.html" %}
-    <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <form class="box" method="post">
-                    {% csrf_token %}
-                    <h1>Admin Login Panel</h1>
 
-                     {% render_field form.username class="form-control rounded-0" autocomplete="off" placeholder="Username" %}
-                     {% render_field form.password class="form-control rounded-0" autocomplete="off" placeholder="Password" %}
+</head>
 
-                     <input type="submit" class="btn btn-lg btn-primary rounded-0" name="" value="Admin Login">
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
 
-                </form>
-            </div>
+        <div class="signup">
+            <form method="post">
+                {% csrf_token %}
+                <label for="chk" aria-hidden="true">Admin</label>
+                {% render_field form.username class="form-control rounded-0" autocomplete="off" placeholder="Username" %}
+                {% render_field form.password class="form-control rounded-0" autocomplete="off" placeholder="Password" %}
+                <input type="submit" class="button" value="Login">
+            </form>
         </div>
+
     </div>
-</div>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br>
-{% include "footer.html" %}
-  </body>
+</body>
+
 </html>
